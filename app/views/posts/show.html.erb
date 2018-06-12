@@ -1,5 +1,19 @@
-<h1> Trying To Figure Out Posts</h1>
-
-<% @posts %>
-<%= image_tag(p.image_url, size: 600)%>
-<% end %>
+<!-- <h1> </h1>
+would like to have post TITLE, which i forgot to put in the Post model
+-->
+<h1><%= @post.title %></h1>
+<div class="row">
+    <div class="col-md-6">
+        <%= image_tag(@post.image_url, size: 400) %>
+    </div>
+    <br>
+    <div class="col-md-6">
+        <%= @post.description %>
+        <br>
+        <%= @post.user.email %>
+    </div>
+    <br>
+    <% if @post.user == current_user %>
+        <%= link_to 'Edit Post', edit_post_path(@post.id), class: 'nav-link' %>
+    <% end %>
+</div>

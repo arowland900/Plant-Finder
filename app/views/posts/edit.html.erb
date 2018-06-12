@@ -1,2 +1,18 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1>Edit Post Info</h1>
+    <%= form_for @post do |f| %>  
+      <div class="form-group">
+        <%= f.label :title, 'Title' %>
+        <%= f.text_field :title, class: 'form-control' %>
+        <%= f.label :image_url, 'Image' %>
+        <%= f.text_field :image_url, class: 'form-control' %>
+        <%= f.label :description, 'Description' %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Submit Edit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to("Delete Post", post_path(@post.id), method: "delete") %>

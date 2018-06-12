@@ -5,8 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.all
-    @user.id = @posts.user_id
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -23,16 +22,24 @@ class PostsController < ApplicationController
   end
   
   def edit
+    @post = Post.find(params[:id])
   end
-  
+
   def update
+    puts params
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to post_path(@post)
   end
   
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy  
+    redirect_to user_path(current_user.id)
   end
 
   private
   def post_params
-    params.require(:post).permit(:image_url, :description)
+    params.require(:post).permit(:image_url, :description, :title)
   end
 end
