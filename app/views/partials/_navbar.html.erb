@@ -2,12 +2,18 @@
   <li class="nav-item">
     <%= link_to 'Home', root_path, class: 'nav-link' %>
   </li>
+  <li class="nav-item">
+    <%= link_to "Posts", posts_path, class: 'nav-link' %> 
+  </li>
   <% if logged_in? %>
     <li class="nav-item">
       <a class="nav-link disabled">Logged In As: <%= current_user.name %> </a>
     </li>
     <li class="nav-item">
       <%= link_to 'Log Out', logout_path, method: 'delete', class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Account Settings', "/users/[:id]/edit", class: 'nav-link' %>
     </li>
   <% else %>
     <li class="nav-item">

@@ -1,0 +1,10 @@
+<h1> Posts </h1>
+<div class="row">
+  <div class="col-md-12">
+<% for p in @posts.reverse %>
+
+        <%= image_tag(p.image_url, size: 200)%>
+
+<% end %>
+  </div>
+</div>

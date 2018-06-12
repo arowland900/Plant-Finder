@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       
       redirect_to user_path(@user)
     else
-      
+      # byebug
       ###########################################
       flash[:danger] = 'Incorrect email or password. Please try again.'
       ###########################################
