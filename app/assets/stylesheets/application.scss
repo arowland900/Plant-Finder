@@ -1,1 +1,46 @@
 @import "bootstrap";
+
+.everything {
+    background: rgb(247, 238, 228);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.post {
+    margin: 10px;
+    // position: relative;
+    display: inline-block;
+    // background-color: black;
+}
+
+.post:hover  {
+    opacity: 0.8;
+}
+
+.nav-link.name {
+    color: darkseagreen!important;
+}
+
+.spacing {
+    margin: 140px;
+}
+
+.navbar-brand.title {
+    color: rgb(158, 101, 27)!important;
+    // font-size: 26px;
+    // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.nav-link.linky {
+    color: rgb(158, 101, 27)!important;
+}
+
+.thumb {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+    .container-fluid {
+        padding-left: 100px!important;
+        padding-right: 100px!important;
+    }
+}

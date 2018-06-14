@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit, :update, :destroy]
 
   def index
     @post = Post.new
@@ -7,12 +7,11 @@ class UsersController < ApplicationController
 
   def show
     @post = Post.new
-    @posts = current_user.posts
-    @user = current_user
+    @user = User.find(params[:id])
 
-    unless current_user.id == @user.id
-      redirect_to user_path(current_user.id)
-    end
+    # unless current_user.id == @user.id
+    #   redirect_to user_path(current_user.id)
+    # end
   end
 
   def new
@@ -35,8 +34,12 @@ class UsersController < ApplicationController
 
   def update
     puts params
-    current_user.update(user_params)
-    redirect_to user_path(current_user)
+    if current_user.update(user_params)
+      redirect_to user_path(current_user)
+    else
+      flash[:warning] = "Please confirm your password."
+      redirect_to edit_user_path(current_user)
+    end
   end
 
   def destroy

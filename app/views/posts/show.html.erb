@@ -1,16 +1,17 @@
 <!-- <h1> </h1>
 would like to have post TITLE, which i forgot to put in the Post model
 -->
-<h1><%= @post.title %></h1>
+<h3 class='spacing'></h3>
+<h1><%= link_to @post.user.name, "/users/#{@post.user_id}" %> - <%= @post.title %></h1>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 small">
         <%= image_tag(@post.image_url, size: 400) %>
     </div>
     <br>
     <div class="col-md-6">
         <%= @post.description %>
         <br>
-        <%= @post.user.email %>
+        <%= mail_to @post.user.email, "contact" %>
     </div>
     <br>
     <% if @post.user == current_user %>

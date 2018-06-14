@@ -1,10 +1,13 @@
-<h1> Posts </h1>
-<div class="row">
-  <div class="col-md-12">
-<% for p in @posts.reverse %>
-
-        <%= link_to image_tag(p.image_url, size: 200), post_path(p.id) %>
-
-<% end %>
+<!-- <h1 class="title"> Posts </h1> -->
+<h3 class='spacing'></h3>
+<%# 10.times do %>
+<% @posts.reverse.each_slice(6) do |row| %>
+  <div class="row">
+    <% row.each do |p| %>
+      <div class="col-md-2 col-xs-4">
+        <div class="post"><%= link_to image_tag(p.image_url, class: "thumb"), post_path(p.id) %> </div>
+      </div>
+    <% end %>
   </div>
-</div>
+<% end %> 
+<%# end %>

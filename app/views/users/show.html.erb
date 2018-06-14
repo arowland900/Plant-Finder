@@ -1,29 +1,33 @@
+
+<h3 class='spacing'></h3>
 <h1><%= @user.name %></h1>
-<h3><%= @user.email %></h3>
-
-<div class="row">
-  <div class="col-md-12">
-<% for p in @posts.reverse %>
-
-        <%= link_to image_tag(p.image_url, size: 200), post_path(p.id) %>
-
+<% if @user != current_user %>
+    <h3><%= mail_to @user.email, "contact" %></h3>
 <% end %>
-  </div>
-</div>
 
 <div class="row">
-  <div class="col-md-6 offset-md-3">
-    <h1>New Post</h1>
-    <%= form_for @post do |f| %>  
-      <div class="form-group">
-        <%= f.label :title, 'Title'%>
-        <%= f.text_field :title, class: 'form-control'%>
-        <%= f.label :description, 'Description*' %>
-        <%= f.text_field :description, class: 'form-control' %>
-        <%= f.label :image_url, 'image_url*' %>
-        <%= f.text_field :image_url, class: 'form-control' %>
-      </div>
-      <%= f.submit 'Upload Post', class: 'btn btn-primary' %>
+  <div class="row">
+    <div class="col-md-12">
+      <% @user.posts.reverse.each do |p| %>
+            <div class="post">  <%= link_to image_tag(p.image_url, size: 150), post_path(p.id) %> </div>
+      <% end %> 
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <% if @user == current_user %>
+      <h1>New Post</h1>
+      <%= form_for @post do |f| %>  
+        <div class="form-group">
+          <%= f.label :title, 'Title'%>
+          <%= f.text_field :title, class: 'form-control'%>
+          <%= f.label :description, 'Description*' %>
+          <%= f.text_field :description, class: 'form-control' %>
+          <%= f.label :image_url, 'image_url*' %>
+          <%= f.text_field :image_url, class: 'form-control' %>
+        </div>
+        <%= f.submit 'Upload Post', class: 'btn btn-primary' %>
+      <% end %>
     <% end %>
   </div>
 </div>
