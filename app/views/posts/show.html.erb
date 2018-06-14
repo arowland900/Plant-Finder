@@ -5,7 +5,7 @@ would like to have post TITLE, which i forgot to put in the Post model
 <h1><%= link_to @post.user.name, "/users/#{@post.user_id}" %> - <%= @post.title %></h1>
 <div class="row">
     <div class="col-md-6 small">
-        <%= image_tag(@post.image_url, size: 400) %>
+        <a class="modal-trigger" data-toggle="modal" data-target=".bd-example-modal-lg"><%= image_tag(@post.image.url, class: 'enlarged') %></a>
     </div>
     <br>
     <div class="col-md-6">
@@ -17,4 +17,13 @@ would like to have post TITLE, which i forgot to put in the Post model
     <% if @post.user == current_user %>
         <%= link_to 'Edit Post', edit_post_path(@post.id), class: 'nav-link' %>
     <% end %>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <%= image_tag(@post.image.url, class: 'enlarged') %>
+    </div>
+  </div>
 </div>
