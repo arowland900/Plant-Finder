@@ -1,6 +1,6 @@
 <!-- <h1 class="title"> Posts </h1> -->
 <h3 class='spacing'></h3>
-<%# 10.times do %>
+<% 10.times do %>
 <% @posts.reverse.each_slice(6) do |row| %>
   <div class="row">
     <% row.each do |p| %>
@@ -10,4 +10,4 @@
     <% end %>
   </div>
 <% end %> 
-<%# end %>
+<% end %>
