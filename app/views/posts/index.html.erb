@@ -8,6 +8,16 @@
         <div class="post"><%= link_to image_tag(p.image.url("medium"), class: "thumb"), post_path(p.id) %> </div>
       </div>
     <% end %>
+    <% row.each do |p| %>
+      <div class="col-md-2 col-xs-4">
+        <div class="post"><%= link_to image_tag(p.image.url("medium"), class: "thumb"), post_path(p.id) %> </div>
+      </div>
+    <% end %>
+    <% row.each do |p| %>
+      <div class="col-md-2 col-xs-4">
+        <div class="post"><%= link_to image_tag(p.image.url("medium"), class: "thumb"), post_path(p.id) %> </div>
+      </div>
+    <% end %>
   </div>
 <% end %> 
 <% end %>
