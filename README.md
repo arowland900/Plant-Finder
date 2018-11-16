@@ -53,10 +53,6 @@ This app is built to help connect people who need temporary homes for their plan
 
 * I would like to be able to ad a search function, and hash tags to the posts to help facilitate said search function.
 
-### Acknolwedgements
-
-Thank you WDI team and professors for all of your help!
-
 ### Technical Requirements
 * I two models: Posts & Users
 * Users can log in & Sign up with authentication. Users cannot change other users profiles and cannot delete other users Posts. Only the original poster can take the pet down once it has been adopted. 
