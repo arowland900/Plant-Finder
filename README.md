@@ -1,9 +1,8 @@
-# plantPlanet
+# Plant-Finder
 
+Plant-Finder is a full stack Ruby on Rails application built to connect people who need temporary homes for their plants.
 
-This app is built to help connect people who need temporary homes for their plants while they are out of town!
-
-[Link to plantPlanet](https://protected-eyrie-23510.herokuapp.com/)
+Check it out [here](https://protected-eyrie-23510.herokuapp.com/)!
 
 ### Technology
     * Ruby on Rails
@@ -54,7 +53,7 @@ This app is built to help connect people who need temporary homes for their plan
 * I would like to be able to ad a search function, and hash tags to the posts to help facilitate said search function.
 
 ### Technical Requirements
-* I two models: Posts & Users
+* Two models: Posts & Users
 * Users can log in & Sign up with authentication. Users cannot change other users profiles and cannot delete other users Posts. Only the original poster can take the pet down once it has been adopted. 
 * Both Users and Posts have full CRUD
 * They app is currently deployed using Heroku
